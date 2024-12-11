@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macapá Shopping - Redesign</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <img src="/home/assinadoc/Downloads/logo04.png" alt="Macapá Shopping">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#lojas">Lojas</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#cinema">Cinema</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="banner">
+      <img src="/home/assinadoc/Downloads/banner.jpg" alt="Bem-vindo ao Macapá Shopping">
+    </div>
+  </header>
+
+  <!-- Carrossel de Banners de Lojas -->
+  <section class="carousel-lojas">
+    <h2>Lojas em Destaque</h2>
+    <div class="carousel">
+      <div class="carousel-inner-lojas">
+        <img src="/home/assinadoc/Downloads/loja1.png" alt="Loja 1">
+        <img src="/home/assinadoc/Downloads/loja2.jpeg" alt="Loja 2">
+        <img src="/home/assinadoc/Downloads/loja3.jpg" alt="Loja 3">
+        <img src="/home/assinadoc/Downloads/loja4.jpg" alt="Loja 4">
+      </div>
+      <button class="prev" onclick="prevLojas()">&#10094;</button>
+      <button class="next" onclick="nextLojas()">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Seção Lojas Parceiras --
+<section id="lojas">
+    <h2><img src="/home/assinadoc/Downloads/nossaloja.png" alt="Logo das Lojas" class="logo-lojas"> Nossas Lojas</h2>
+    <div class="parceiros">
+      <img src="/home/assinadoc/Downloads/loja1.png" alt="Loja 1">
+      <img src="/home/assinadoc/Downloads/loja2.jpeg" alt="Loja 2">
+      <img src="/home/assinadoc/Downloads/loja3.jpg" alt="Loja 3">
+      <img src="/home/assinadoc/Downloads/loja4.jpg" alt="Loja 4">
+    </div>
+  </section>
+  
+
+  <!-- Seção Categorias -->
+  <section id="categorias">
+    <h2>Categorias</h2>
+    <div class="categorias-itens">
+      <div class="categoria">Roupas</div>
+      <div class="categoria">Eletrônicos</div>
+      <div class="categoria">Alimentação</div>
+      <div class="categoria">Serviços</div>
+    </div>
+  </section>
+
+  <!-- Seção Cinema -->
+  <section id="cinema">
+    <h2>Em Cartaz</h2>
+    <div class="filmes">
+      <div class="filme">
+        <img src="filme1.jpg" alt="Filme 1">
+        <p>Filme 1</p>
+      </div>
+      <div class="filme">
+        <img src="filme2.jpg" alt="Filme 2">
+        <p>Filme 2</p>
+      </div>
+      <div class="filme">
+        <img src="filme3.jpg" alt="Filme 3">
+        <p>Filme 3</p>
+      </div>
+      <div class="filme">
+        <img src="filme4.jpg" alt="Filme 4">
+        <p>Filme 4</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-info">
+      <p>&copy; 2024 Macapá Shopping | Todos os direitos reservados</p>
+      <p>Av. Macapá, 123 - Centro, Macapá/AP</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Carrossel de Banners de Lojas
+    let currentLojaIndex = 0;
+    const lojaSlides = document.querySelectorAll('.carousel-inner-lojas img');
+
+    function showLojaSlide(index) {
+      if (index >= lojaSlides.length) {
+        currentLojaIndex = 0;
+      } else if (index < 0) {
+        currentLojaIndex = lojaSlides.length - 1;
+      } else {
+        currentLojaIndex = index;
+      }
+
+      const offset = -currentLojaIndex * 100;
+      document.querySelector('.carousel-inner-lojas').style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextLojas() {
+      showLojaSlide(currentLojaIndex + 1);
+    }
+
+    function prevLojas() {
+      showLojaSlide(currentLojaIndex - 1);
+    }
+
+    // Alteração automática (opcional)
+    setInterval(() => {
+      nextLojas();
+    }, 4000); // Muda o banner a cada 4 segundos
+  </script>
+</body>
+</html>
