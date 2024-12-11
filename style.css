@@ -1,0 +1,261 @@
+/* Tema de Cores */
+:root {
+  --primary-color: #1b3562;
+  --secondary-color: #004b99;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --hover-color: #0055b3;
+}
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo e Tipografia */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+header .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header .logo img {
+  height: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: 5px;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: var(--hover-color);
+}
+
+/* Banner Principal */
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Carrossel de Banners de Lojas */
+.carousel-lojas {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.carousel-lojas h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.carousel {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-inner-lojas {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner-lojas img {
+  width: 100%;
+  max-width: 300px; /* Ajuste para lojas */
+  margin: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de navegação */
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button.prev:hover,
+button.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Seção Lojas Parceiras */
+#lojas {
+  padding: 40px 0;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+#lojas h2 {
+  /* Logo no título "Nossas Lojas" */
+ {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.parceiros img {
+  width: 200px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção Categorias */
+#categorias {
+  background-color: var(--background-color);
+  padding: 40px 0;
+  text-align: center;
+}
+
+#categorias h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.categorias-itens {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.categoria {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.categoria:hover {
+  background-color: var(--hover-color);
+}
+
+/* Seção Cinema */
+#cinema {
+  padding: 40px 0;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+#cinema h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.filmes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filme {
+  width: 250px;
+  text-align: center;
+}
+
+.filme img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.filme p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-info p {
+  margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-inner-lojas {
+    flex-direction: column;
+  }
+
+  .carousel-inner-lojas img {
+    max-width: 100%;
+  }
+
+  .categorias-itens {
+    flex-direction: column;
+  }
+
+  .parceiros img {
+    width: 150px;
+  }
+
+  .filmes {
+    flex-direction: column;
+  }
+}
